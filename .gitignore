@@ -2,3 +2,4 @@
 /DL/keras/cat*.h5
 /DL/keras/data
 *.h5
+/DL/keras/*.h5

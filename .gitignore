@@ -4,3 +4,4 @@
 *.h5
 /DL/keras/*.h5
 /DL/keras/my_log_dir/
+/goorm/

@@ -14,16 +14,23 @@
 
       // 각각의 class를 하나의 component라고 이해하면 편하다.
       class GuGuDan extends React.Component {
-        constructor(props) {
-          super(props);
-          this.state = {
-            // 수동으로 바꿀 값만 state로 바꾸기.
-            first: Math.ceil(Math.random() * 9),
-            second: Math.ceil(Math.random() * 9),
-            value: "",
-            result: "",
-          };
-        }
+        // constructor(props) {
+        //   super(props);
+        //   this.state = {
+        //     // 수동으로 바꿀 값만 state로 바꾸기.
+        //     first: Math.ceil(Math.random() * 9),
+        //     second: Math.ceil(Math.random() * 9),
+        //     value: "",
+        //     result: "",
+        //   };
+        // }
+        // 실무에서는 constructor(props) {super(props);} 를 생략하는 경우가 더 많다.
+        state = {
+              first: Math.ceil(Math.random() * 9),
+              second: Math.ceil(Math.random() * 9),
+              value: "",
+              result: "",
+        };
 
         onSubmit = (e) => {
           e.preventDefault();

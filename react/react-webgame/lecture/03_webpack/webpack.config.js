@@ -18,13 +18,13 @@ module.exports = {
                 presets: [
                     ["@babel/preset-env", {
                         targets: {
-                            browsers: ['> 5% in KR', 'last 2 chrome versions'],
+                            browsers: ['> 1% in KR'],
                         },
                         debug: true,
                 }],
                 "@babel/preset-react",
                  ],
-                plugins: [],
+                plugins: ['@babel/plugin-proposal-class-properties'],
             },
         }],
     },

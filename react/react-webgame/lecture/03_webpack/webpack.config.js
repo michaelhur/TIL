@@ -7,21 +7,27 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx']
     },
-
     entry: {
         app: ['./client'] // client.jsx가 WordRelay.jsx를 불러오기때문에 explicit하게 명시할 필요가 없다.
     },//입력
-
     module: {
         rules: [{
             test: /\.jsx?/,
             loader: 'babel-loader',
             options: {
-                presets: ["@babel/preset-env", "@babel/preset-react"],
+                presets: [
+                    ["@babel/preset-env", {
+                        targets: {
+                            browsers: ['> 5% in KR', 'last 2 chrome versions'],
+                        },
+                        debug: true,
+                }],
+                "@babel/preset-react",
+                 ],
+                plugins: [],
             },
         }],
     },
-
     output: {
         path: path.join(__dirname, 'dist'),
         filename: "app.js"

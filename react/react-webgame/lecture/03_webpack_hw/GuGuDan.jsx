@@ -31,7 +31,10 @@ const GuGuDan = () => {
         <React.Fragment>
             <div>{first} 곱하기 {second}는?</div>
             <form onSubmit={onSubmit}>
-                <input ref={inputRef} onChange={onChange} value={value} />
+                <input
+                    ref={inputRef}
+                    onChange={onChange}
+                    value={value} />
                 <button>입력!</button>
             </form>
             <div id="result">{result}</div>

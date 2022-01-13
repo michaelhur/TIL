@@ -25,10 +25,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lecture/00_external_api" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lecture/00_external_api" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lecture" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -50,6 +58,12 @@
       <workItem from="1641132567551" duration="12000" />
       <workItem from="1641206330319" duration="4050000" />
       <workItem from="1641216467087" duration="3147000" />
+      <workItem from="1641312542862" duration="915000" />
+      <workItem from="1641476261249" duration="2071000" />
+      <workItem from="1641559929998" duration="1198000" />
+      <workItem from="1641661048273" duration="463000" />
+      <workItem from="1641725596593" duration="828000" />
+      <workItem from="1642074051378" duration="799000" />
     </task>
     <servers />
   </component>

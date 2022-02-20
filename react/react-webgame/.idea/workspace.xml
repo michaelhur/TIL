@@ -27,7 +27,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lecture/09_PureComponent" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -85,7 +85,10 @@
       <workItem from="1643691083817" duration="2247000" />
       <workItem from="1643704841891" duration="8683000" />
       <workItem from="1643739807627" duration="2355000" />
-      <workItem from="1643776535316" duration="19881000" />
+      <workItem from="1643776535316" duration="19980000" />
+      <workItem from="1643988629824" duration="606000" />
+      <workItem from="1644591440838" duration="754000" />
+      <workItem from="1644653764984" duration="6538000" />
     </task>
     <servers />
   </component>

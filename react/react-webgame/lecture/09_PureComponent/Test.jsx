@@ -20,8 +20,9 @@ class Test extends PureComponent{
     // }
 
     onClick = () => {
-        const array = this.state.array;
-        array.push(1);
+        // push를 한다면 component에서 state가 변했는지 알아차리지 못한다
+        // const array = this.state.array;
+        // array.push(1);
         this.setState({
             array: [... this.state.array, 1], // 새로운 array를 만들때는 array를 펼쳐서 엣날 값과 새로운 값을 넣으면 됨.
         }); // 실제로 State가 바뀌지않아도 setState가 호출되면 렌더링됨.

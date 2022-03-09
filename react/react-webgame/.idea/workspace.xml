@@ -25,17 +25,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lecture/09_PureComponent" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lecture" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lecture" />
       <recent name="$PROJECT_DIR$/lecture/09_PureComponent" />
       <recent name="$PROJECT_DIR$/lecture/08_shouldComponentUpdate" />
       <recent name="$PROJECT_DIR$/lecture/07_NumberBaseball_Hooks" />
-      <recent name="$PROJECT_DIR$/lecture" />
       <recent name="$PROJECT_DIR$/lecture/00_external_api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -90,6 +90,15 @@
       <workItem from="1644591440838" duration="754000" />
       <workItem from="1644653764984" duration="6538000" />
       <workItem from="1646227815179" duration="1006000" />
+      <workItem from="1646316416734" duration="6000" />
+      <workItem from="1646318331868" duration="631000" />
+      <workItem from="1646402103624" duration="1553000" />
+      <workItem from="1646464803373" duration="983000" />
+      <workItem from="1646484035173" duration="1166000" />
+      <workItem from="1646561383632" duration="4000" />
+      <workItem from="1646561580745" duration="3000" />
+      <workItem from="1646562540288" duration="1853000" />
+      <workItem from="1646828376092" duration="7860000" />
     </task>
     <servers />
   </component>

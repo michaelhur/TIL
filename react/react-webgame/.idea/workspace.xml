@@ -33,10 +33,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lecture" />
+      <recent name="$PROJECT_DIR$/lecture/12_ResponseCheck" />
       <recent name="$PROJECT_DIR$/lecture/09_PureComponent" />
       <recent name="$PROJECT_DIR$/lecture/08_shouldComponentUpdate" />
       <recent name="$PROJECT_DIR$/lecture/07_NumberBaseball_Hooks" />
-      <recent name="$PROJECT_DIR$/lecture/00_external_api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lecture/06_NumberBaseball" />
@@ -98,7 +98,8 @@
       <workItem from="1646561383632" duration="4000" />
       <workItem from="1646561580745" duration="3000" />
       <workItem from="1646562540288" duration="1853000" />
-      <workItem from="1646828376092" duration="8610000" />
+      <workItem from="1646828376092" duration="8976000" />
+      <workItem from="1646913469620" duration="8244000" />
     </task>
     <servers />
   </component>

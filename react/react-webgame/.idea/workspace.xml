@@ -15,6 +15,10 @@
       </list>
     </option>
   </component>
+  <component name="JsBowerSettings">
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
   <component name="ProjectId" id="236FQSlWVZoPBDqazn9rU3Eq8GY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,7 +31,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lecture" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -99,7 +103,16 @@
       <workItem from="1646561580745" duration="3000" />
       <workItem from="1646562540288" duration="1853000" />
       <workItem from="1646828376092" duration="8976000" />
-      <workItem from="1646913469620" duration="8244000" />
+      <workItem from="1646913469620" duration="8282000" />
+      <workItem from="1646922859643" duration="3000" />
+      <workItem from="1647003850473" duration="848000" />
+      <workItem from="1647005177731" duration="1221000" />
+      <workItem from="1647009245811" duration="1202000" />
+      <workItem from="1647071838682" duration="1217000" />
+      <workItem from="1647074298156" duration="600000" />
+      <workItem from="1647091108129" duration="599000" />
+      <workItem from="1647097819278" duration="1355000" />
+      <workItem from="1647160101483" duration="14759000" />
     </task>
     <servers />
   </component>

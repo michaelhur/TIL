@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Ball from "./ball"
 
 function getWinNumbers() {
     console.log('getWinNumbers');
@@ -30,7 +31,7 @@ class Lotto extends Component{
             <>
                 <div>당첨 숫자</div>
                 <div id="결과창">
-                    {winBalls.map((v) => <Ball key={v} number={v})}
+                    { winBalls.map((v) => <Ball key={v} number={v}/>) }
                 </div>
                 <div>보너스!</div>
                 { bonus && <Ball number={bonus} /> }

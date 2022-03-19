@@ -38,7 +38,7 @@ const Lotto = () => {
         setBonus(null);
         setRedo(false);
         timeouts.current = [];
-    }, [winBalls]); // winBalls를 두번째 인자로 넣어주면서 winBalls가 변경될떄마다 useCallback이 다른 것을 기억하도록 만든다.
+    }, [winNumbers]); // winBalls를 두번째 인자로 넣어주면서 winBalls가 변경될떄마다 useCallback이 다른 것을 기억하도록 만든다.
 
     useEffect(() => {
         for (let i = 0; i < winNumbers.length - 1; i++) {
@@ -53,9 +53,10 @@ const Lotto = () => {
         return () => {
             timeouts.current.forEach((v)=>{
                 clearTimeout(v);
-            })
+            });
         }
-    }, [timeouts.current]) // deps:[]일때는 componentDidMount랑 똑같게 작동한다.
+    }, [timeouts.current])
+    // deps:[]일때는 componentDidMount랑 똑같게 작동한다.
     // 배열에 요소가 있으면 componentDidMount와 componentDidUpdate 둘 다 수행
     // 배열에 조건을 넣어서 comoonentDidUpdate를 해줄수 있다.
 

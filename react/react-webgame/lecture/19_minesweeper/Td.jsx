@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { CODE, TableContext} from "./Minesweeper";
+import React, {useCallback, useContext} from "react";
+import {CODE, OPEN_CELL, TableContext } from "./Minesweeper";
 
 const getTdStyle = (code) => {
     switch (code) {
@@ -34,11 +34,16 @@ const getTdText = (code) => {
 }
 
 const Td = ({rowIndex, cellIndex}) => {
-    const { tableData } = useContext(TableContext);
+    const { tableData, dispatch } = useContext(TableContext);
+
+    const onClickTd = useCallback(() => {
+        dispatch({ type: OPEN_CELL, row: rowIndex, cell: cellIndex })
+    }, [])
 
     return(
         <td
-            style = {getTdStyle(tableData[rowIndex][cellIndex])}>
+            style = {getTdStyle(tableData[rowIndex][cellIndex])}
+            onClick={onClickTd}>
             {getTdText(tableData[rowIndex][cellIndex])}
         </td>
     )

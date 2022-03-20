@@ -1,4 +1,4 @@
-import React, { useReducer, createContext } from "react";
+import React, {useReducer, createContext, useMemo} from "react";
 import Table from "./Table"
 import Form from "./Form";
 
@@ -19,6 +19,7 @@ export const TableContext = createContext({
 });
 
 export const START_GAME = "START_GAME";
+export const OPEN_CELL = "OPEN_CELL";
 
 const initialState = {
     tableData: [],
@@ -67,15 +68,28 @@ const reducer = (state, action) => {
                 ...state,
                 tableData: plantMine(action.row, action.cell, action.mine)
             }
+
+        case OPEN_CELL:
+            const tableData = [...state.tableData];
+            tableData[action.row] = [...state.tableData[action.row]];
+            tableData[action.row][action.cell] = CODE.OPENED;
+            return {
+                ...state,
+                tableData,
+            }
     }
 }
 
 const Minesweeper = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    const value = useMemo(() => ({
+        tableData: state.tableData, dispatch
+    }), [state.tableData])
+
     return(
         // Provider로 전달해줄 값을 설정하기
-        <TableContext.Provider value={{ tableData: state.tableData, dispatch }}>
+        <TableContext.Provider value={value}>
             <Form dispatch={dispatch}/>
             <div>{state.timer}</div>
             <Table />

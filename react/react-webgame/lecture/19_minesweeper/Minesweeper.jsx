@@ -15,6 +15,7 @@ export const CODE = {
 
 export const TableContext = createContext({
     tableData: [],
+    halted: false,
     dispatch: () => {},
 });
 
@@ -95,19 +96,44 @@ const reducer = (state, action) => {
             }
         }
 
-        case NORMALIZE_CELL: {
-            return {
-
-            }
-        }
         case QUESTION_CELL: {
+            const tableData = [...state.tableData];
+            tableData[action.row] = [...state.tableData[action.row]];
+            if (tableData[action.row][action.cell] === CODE.FLAG_MINE) {
+                tableData[action.row][action.cell] = CODE.QUESTION_MINE;
+            } else {
+                tableData[action.row][action.cell] = CODE.QUESTION;
+            }
             return {
-
+                ...state,
+                tableData,
             }
         }
         case FLAG_CELL: {
+            const tableData = [...state.tableData];
+            tableData[action.row] = [...state.tableData[action.row]];
+            if (tableData[action.row][action.cell] === CODE.MINE) {
+                tableData[action.row][action.cell] = CODE.FLAG_MINE;
+            } else {
+                tableData[action.row][action.cell] = CODE.FLAG;
+            }
             return {
+                ...state,
+                tableData,
+            }
+        }
 
+        case NORMALIZE_CELL: {
+            const tableData = [...state.tableData];
+            tableData[action.row] = [...state.tableData[action.row]];
+            if (tableData[action.row][action.cell] === CODE.MINE) {
+                tableData[action.row][action.cell] = CODE.MINE;
+            } else {
+                tableData[action.row][action.cell] = CODE.NORMAL;
+            }
+            return {
+                ...state,
+                tableData,
             }
         }
     }
@@ -115,18 +141,21 @@ const reducer = (state, action) => {
 
 const Minesweeper = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
+    const { tableData, halted, timer, result } = state;
 
     const value = useMemo(() => ({
-        tableData: state.tableData, dispatch
-    }), [state.tableData])
+        tableData,
+        dispatch,
+        halted,
+    }), [tableData, halted])
 
     return(
         // Provider로 전달해줄 값을 설정하기
         <TableContext.Provider value={value}>
             <Form dispatch={dispatch}/>
-            <div>{state.timer}</div>
+            <div>{timer}</div>
             <Table />
-            <div>{state.result}</div>
+            <div>{result}</div>
         </TableContext.Provider>
     )
 }

@@ -53,9 +53,12 @@ const getTdText = (code) => {
 }
 
 const Td = ({rowIndex, cellIndex}) => {
-    const { tableData, dispatch } = useContext(TableContext);
+    const { tableData, dispatch, halted } = useContext(TableContext);
 
     const onClickTd = useCallback(() => {
+        if (halted) {
+            return ;
+        }
         switch (tableData[rowIndex][cellIndex]){
             case CODE.OPENED:
             case CODE.FLAG_MINE:
@@ -71,10 +74,14 @@ const Td = ({rowIndex, cellIndex}) => {
                 return ;
         }
         dispatch({ type: OPEN_CELL, row: rowIndex, cell: cellIndex })
-    }, [tableData[rowIndex][cellIndex]])
+    }, [tableData[rowIndex][cellIndex], halted]);
 
     const onRightClickTd = useCallback((e) => {
+        console.log("onRightClickTd");
         e.preventDefault();
+        if (halted) {
+            return ;
+        }
         switch (tableData[rowIndex][cellIndex]){
             default:
                 return;
@@ -90,17 +97,15 @@ const Td = ({rowIndex, cellIndex}) => {
             case CODE.QUESTION_MINE:
                 dispatch({ type: NORMALIZE_CELL, row: rowIndex, cell: cellIndex});
                 return ;
-
         }
-
-    }, [tableData[rowIndex][cellIndex]])
+    }, [tableData[rowIndex][cellIndex], halted]);
 
     return(
         <td
-            style = {getTdStyle(tableData[rowIndex][cellIndex])}
+            style={getTdStyle(tableData[rowIndex][cellIndex])}
             onClick={onClickTd}
             onContextMenu={onRightClickTd}
-            >
+        >
             {getTdText(tableData[rowIndex][cellIndex])}
         </td>
     )

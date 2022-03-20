@@ -20,11 +20,16 @@ export const TableContext = createContext({
 
 export const START_GAME = "START_GAME";
 export const OPEN_CELL = "OPEN_CELL";
+export const CLICK_MINE = "CLICK_MINE";
+export const NORMALIZE_CELL = "NORMALIZE_CELL";
+export const FLAG_CELL = "FLAG_CELL";
+export const QUESTION_CELL = "QUESTION_CELL";
 
 const initialState = {
     tableData: [],
     timer: 0,
     result: '',
+    halted: false,
 };
 
 const plantMine = (row, cell, mine) => {
@@ -63,13 +68,14 @@ const reducer = (state, action) => {
         default:
             return state;
 
-        case START_GAME:
+        case START_GAME: {
             return {
                 ...state,
-                tableData: plantMine(action.row, action.cell, action.mine)
+                tableData: plantMine(action.row, action.cell, action.mine),
+                halted: false,
             }
-
-        case OPEN_CELL:
+        }
+        case OPEN_CELL: {
             const tableData = [...state.tableData];
             tableData[action.row] = [...state.tableData[action.row]];
             tableData[action.row][action.cell] = CODE.OPENED;
@@ -77,6 +83,33 @@ const reducer = (state, action) => {
                 ...state,
                 tableData,
             }
+        }
+        case CLICK_MINE: {
+            const tableData = [...state.tableData];
+            tableData[action.row] = [...state.tableData[action.row]];
+            tableData[action.row][action.cell] = CODE.CLICKED_MINE;
+            return {
+                ...state,
+                tableData,
+                halted: true,
+            }
+        }
+
+        case NORMALIZE_CELL: {
+            return {
+
+            }
+        }
+        case QUESTION_CELL: {
+            return {
+
+            }
+        }
+        case FLAG_CELL: {
+            return {
+
+            }
+        }
     }
 }
 

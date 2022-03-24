@@ -1,4 +1,4 @@
-import React, {useCallback, useContext} from "react";
+import React, {useCallback, useContext, memo, useMemo} from "react";
 import {CODE, OPEN_CELL, CLICK_MINE, NORMALIZE_CELL, QUESTION_CELL, FLAG_CELL, TableContext } from "./Minesweeper";
 
 const getTdStyle = (code) => {
@@ -34,6 +34,7 @@ const getTdStyle = (code) => {
 }
 
 const getTdText = (code) => {
+    console.log("getTdText")
     switch (code) {
         case CODE.NORMAL:
             return '';
@@ -52,7 +53,7 @@ const getTdText = (code) => {
     }
 }
 
-const Td = ({rowIndex, cellIndex}) => {
+const Td = memo(({rowIndex, cellIndex}) => {
     const { tableData, dispatch, halted } = useContext(TableContext);
 
     const onClickTd = useCallback(() => {
@@ -100,15 +101,22 @@ const Td = ({rowIndex, cellIndex}) => {
         }
     }, [tableData[rowIndex][cellIndex], halted]);
 
-    return(
+    console.log("TD RENDERED");
+
+    return <RealTd onClickTd={onClickTd} onRightClickTd={onRightClickTd} data={tableData[rowIndex][cellIndex]} />;
+});
+
+const RealTd = memo(({ onClickTd, onRightClickTd, data }) => {
+    console.log("READTD Rendered")
+    return (
         <td
-            style={getTdStyle(tableData[rowIndex][cellIndex])}
+            style={getTdStyle(data)}
             onClick={onClickTd}
             onContextMenu={onRightClickTd}
         >
-            {getTdText(tableData[rowIndex][cellIndex])}
+            {getTdText(data)}
         </td>
-    )
-}
+    );
+})
 
 export default Td;

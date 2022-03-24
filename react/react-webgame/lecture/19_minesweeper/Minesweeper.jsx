@@ -242,6 +242,7 @@ const Minesweeper = () => {
         dispatch,
         halted,
     }), [tableData, halted]);
+    // context API로 보내는 것은 항상 useMemo로 캐싱해주어야한다.
 
     useEffect(() => {
         let timer;

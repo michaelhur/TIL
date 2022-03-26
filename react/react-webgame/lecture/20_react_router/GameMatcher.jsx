@@ -5,7 +5,9 @@ import RSP from "../14_RSP/RSP";
 import Lotto from "../16_Lotto/Lotto";
 
 class GameMatcher extends Component {
+
     render() {
+        console.log(new URLSearchParams(this.props.location.search.slice(1)));
         if (this.props.match.params.name === 'number-baseball') {
             return <NumberBaseball />
         } else if(this.props.match.params.name === 'rock-scissors-paper'){

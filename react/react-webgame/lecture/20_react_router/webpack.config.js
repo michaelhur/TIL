@@ -3,13 +3,13 @@ const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
     name: 'React Router',
-    mode: 'development', // 실서비스에서는 production으로 바꾸면 됨
+    mode: 'production',
     devtool: 'inline-source-map',
     resolve: {
         extensions: ['.js', '.jsx']
     },
     entry: {
-        app: ['./client'] // client.jsx가 WordRelay.jsx를 불러오기때문에 explicit하게 명시할 필요가 없다.
+        app: ['./client']
     },//입력
     module: {
         rules: [{

@@ -39,6 +39,7 @@ const player3 : {
 
 // here we are repeating ourselves, and this is very inefficient.
 // so we can define a type, and use it repeatedly.
+// This is called "Type Aliases"
 
 type Player = {
     name: string,

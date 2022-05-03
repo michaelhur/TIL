@@ -42,7 +42,7 @@ const player3 : {
 // This is called "Type Aliases"
 
 type Player = {
-    name: string,
+    name: string, // we can go deeper, and declare type Name: string, and replace "name: string" with "name: Name"
     age?: number
 }
 

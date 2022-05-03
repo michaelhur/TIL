@@ -54,3 +54,14 @@ const playerErin : Player = {
     name: "Erin"
 }
 
+// Defining a return type of a function
+function playerMaker(name:string) : Player{ // name:string defines the input type, and : Player defines the return type
+    return {
+        name:name,
+    }
+}
+
+const playerMaker2 = (name:string) : Player => ({name});
+
+const Mike = playerMaker('mike');
+Mike.age = 12;

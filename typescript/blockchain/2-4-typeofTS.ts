@@ -18,3 +18,20 @@ function hello(){
     console.log("x")
 }
 
+// type never
+// never happens when a function never returns
+function hi():never{
+    throw new Error("xxx")
+}
+
+// never also happens if you a type that can be two things at once
+function bye(name:string|number){
+    if (typeof name === "string"){
+        name // this is string
+    } else if (typeof name === "number") {
+        name // this is number
+    } else {
+        name // this is never, because this code should never run.
+    }
+}
+

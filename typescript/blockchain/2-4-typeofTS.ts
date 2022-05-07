@@ -5,7 +5,7 @@ let a: unknown;
 let b: a + 1; // this does not work because type of a is unknown
 
 if (typeof a === 'number'){
-    let b = a + 1
+    let b = a + 1;
 }
 
 if (typeof a === 'string'){

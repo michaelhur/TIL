@@ -40,3 +40,12 @@ const a = superPrint3([1,2,3,4])
 const b = superPrint3([true, false, false, true])
 const c = superPrint3(["1", "2", "3"])
 const d = superPrint3([1,2,false,true])
+
+
+type SuperPrint4 = <T,M>(a:T[], b:M) => T
+const superPrint4: SuperPrint4=  (arr, b) => arr[0]
+
+superPrint4([1,2,3,4], "B")
+
+// generic is different to any
+// typescript learn by reading the code!

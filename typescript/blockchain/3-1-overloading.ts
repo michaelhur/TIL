@@ -23,3 +23,6 @@ const addition:Addition = (a, b, c?:number) => {
     if (c) return a + b + c
     return a + b
 }
+
+addition(1,2)
+addition(1,2,3);

@@ -2,7 +2,7 @@
 class Player {
     constructor(
         private firstName: string,
-        private lastName: string,
+        protected lastName: string,
         public nickname: string
     ) {}
 }
@@ -15,8 +15,8 @@ mike.nickname
 
 abstract class User {
     constructor(
-        private firstName: string,
-        private lastName: string,
+        protected firstName: string,
+        protected lastName: string,
         public nickname: string
     ) {
     }
@@ -35,5 +35,7 @@ class newPlayer extends User {
 
 const michael = new newPlayer("mike", "hur", "마이크");
 
+michael.nickname;
 michael.getNickName()
 michael.getFullName()
+

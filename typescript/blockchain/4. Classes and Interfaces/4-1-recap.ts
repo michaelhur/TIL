@@ -27,7 +27,7 @@ class Dict {
 
 class Word {
     constructor(
-        public term: string,
+        public term: string, // to make it public but not modifiable, we add readonly
         public definition: string
     ){}
 }

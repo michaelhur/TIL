@@ -18,11 +18,11 @@
 // }
 
 // or we can do...
-interface Person {
-    nickname: string
-    healthBar: Health
-    team: Team
-}
+// interface Person {
+//     nickname: string
+//     healthBar: Health
+//     team: Team
+// }
 
 // interface is used to declare "shape" of an object
 // type is more versatile than interface
@@ -34,6 +34,34 @@ interface User {
 interface Player extends User {
 }
 
+// const nico: Player = {
+//     name: "Nico"
+// }
+
+// In type we will do:
+//
+// type User = {
+//     name: string
+// }
+//
+// type Player = User & {
+// }
+//
+// const nico: Player = {
+//     name: "Nico"
+// }
+
+// in interfaces, you can also accumulate!
+interface User {
+    age: number
+}
+
+interface User {
+    adult: boolean
+}
+
 const nico: Player = {
-    name: "Nico"
+    name: "nico",
+    age: 20,
+    adult: true
 }

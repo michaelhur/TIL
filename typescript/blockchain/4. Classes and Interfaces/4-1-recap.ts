@@ -23,6 +23,9 @@ class Dict {
     def(term: string){
         return this.words[term]
     }
+    static hello(){ // static method
+        return "hello"
+    }
 }
 
 class Word {
@@ -38,3 +41,5 @@ const dict = new Dict()
 
 dict.add(kimchi);
 dict.def("kimchi")
+
+Dict.hello()

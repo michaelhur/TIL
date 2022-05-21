@@ -1,5 +1,4 @@
 // These types are exclusive to Typescript, unavailable in Javascript.
-
 // Sometimes you don't know what the type will be.
 let a: unknown;
 let b: a + 1; // this does not work because type of a is unknown

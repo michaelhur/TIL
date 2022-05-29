@@ -9,3 +9,5 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// React.StricMode -> Javascript strict mode로 실행

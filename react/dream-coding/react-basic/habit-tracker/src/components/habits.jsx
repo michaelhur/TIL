@@ -13,15 +13,29 @@ class Habits extends Component {
     // handleIncrement, handleDecrement, handleDelete는 "특정한" habit의 상태를 변경시켜주는 것이기때문에,
     // 인자로 habit을 받는다.
     handleIncrement = (habit) => {
-        console.log(`handleIncrement ${habit.name}`)
+        const habits = [...this.state.habits]; // spread operator
+        const index = habits.indexOf(habit)
+        habits[index].count++;
+        this.setState({
+            habits: habits // key와 value가 동일한 이름을 가지고 있을때는 한개만 써도 됨.
+        });
     };
 
     handleDecrement = (habit) => {
-        console.log(`handleDecrement ${habit.name}`)
+        const habits = [...this.state.habits];
+        const index = habits.indexOf(habit);
+        const count = habits[index].count - 1;
+        habits[index].count = count < 0 ? 0 : count;
+        this.setState({
+            habits: habits
+        })
     };
 
     handleDelete = (habit) => {
-        console.log(`handleDelete ${habit.name}`)
+        const habits = this.state.habits.filter(item => item.id !== habit.id);
+        this.setState({
+            habits: habits
+        })
     };
 
     render() {

@@ -41,12 +41,25 @@ class App extends Component {
         })
     };
 
+    handleAdd = (name) => {
+        const habit = {
+            id:Date.now(),
+            name: name,
+            count: 0
+        }
+        const habits = [...this.state.habits, habit];
+        this.setState({
+            habits: habits
+        })
+    };
+
     render() {
         return (
             <>
-            <Navbar totalCount={this.state.habits.filter(item => item.count > 0).length}/>
-            <Habits
+                <Navbar totalCount={this.state.habits.filter(item => item.count > 0).length}/>
+                <Habits
                 habits={this.state.habits}
+                onAdd={this.handleAdd}
                 onIncrement={this.handleIncrement}
                 onDecrement={this.handleDecrement}
                 onDelete={this.handleDelete}/>

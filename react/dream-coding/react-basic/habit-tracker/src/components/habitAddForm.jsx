@@ -11,7 +11,6 @@ class HabitAddForm extends Component {
     }
 
     render() {
-        console.log("add form");
         return (
             <form className="add-form" onSubmit={this.onSubmit}>
                 <input

@@ -1,8 +1,13 @@
 import './App.css';
+import Button1 from "./components/button1";
+import Button2 from "./components/button2";
 
 function App() {
   return (
-      <h1>Hello :)</h1>
+      <>
+        <Button1 />
+        <Button2 />
+      </>
   );
 }
 

@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
-class Habit extends Component {
+class Habit extends PureComponent {
 
     handleIncrement = () => {
         // Habits.jsx를 참고하자면, onIncrement는 habit을 인자로 받고있다.
@@ -17,8 +17,8 @@ class Habit extends Component {
     };
 
     render() {
-        const {name, count} = this.props.habit
-        console.log(`habit: ${name}`)
+        const {name, count} = this.props.habit;
+        console.log(`habit: ${name}`);
         return (
             <li className="habit">
                 <span className="habit-name">{name}</span>

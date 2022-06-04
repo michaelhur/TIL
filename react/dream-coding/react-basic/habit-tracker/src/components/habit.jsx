@@ -2,6 +2,14 @@ import React, {PureComponent} from 'react';
 
 class Habit extends PureComponent {
 
+    componentDidMount() {
+        console.log(`habit: ${this.props.habit.name} mounted`)
+    }
+
+    componentWillUnmount() {
+        console.log(`habit: ${this.props.habit.name} will be unmounted`)
+    }
+
     handleIncrement = () => {
         // Habits.jsx를 참고하자면, onIncrement는 habit을 인자로 받고있다.
         // 그러므로 Habit 컴포넌트에서도 this.props.onIncrement는 전달받은 this.props.habit을 인자로 받는다.

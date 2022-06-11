@@ -12,7 +12,7 @@ const Maker = ({authService}) => {
             id: "1",
             name: "Elle",
             company: "Samsung",
-            theme: "light",
+            theme: "dark",
             title: "Software Engineer",
             email: "ellie@gmail.com",
             message: "go for it",
@@ -28,7 +28,7 @@ const Maker = ({authService}) => {
             email: "mike.hur@gmail.com",
             message: "go for it",
             fileName: "mike",
-            fileURL: "mike.png"
+            fileURL: null
         },
         {
             id: "3",

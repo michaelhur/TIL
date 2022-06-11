@@ -1,13 +1,35 @@
-import React from 'react';
-import {useLocation} from "react-router-dom";
+import React, {useEffect} from 'react';
+import styles from "./maker.module.css"
+import {useLocation, useNavigate} from "react-router-dom";
+import Header from "../header/header";
+import Footer from "../footer/footer";
+import Editor from "../editor/editor";
+import Preview from "../preview/preview";
 
-const Maker = () => {
+const Maker = ({authService}) => {
     const { state } = useLocation();
+    const navigate = useNavigate();
+    const onLogout = () => {
+        authService.logout();
+    }
+
+    useEffect(() => {
+        authService.onAuthChange(user => {
+            if(!user){
+                navigate('/')
+            }
+        })
+    })
 
     return (
-        <>
-            <h1>Maker</h1>
-        </>
+        <section className={styles.maker}>
+            <Header onLogout={onLogout}/>
+            <div className={styles.container}>
+                <Editor />
+                <Preview />
+            </div>
+            <Footer />
+        </section>
     );
 }
 

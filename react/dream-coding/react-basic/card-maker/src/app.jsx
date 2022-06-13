@@ -9,7 +9,11 @@ function App({FileInput, authService, cardRepository}) {
         <BrowserRouter>
             <Routes>
                 <Route path="/" exact element={<Login authService={authService}/>} />
-                <Route path="/maker" element={<Maker FileInput={FileInput} authService={authService}/>} />
+                <Route path="/maker"
+                       element={<Maker
+                           FileInput={FileInput}
+                           authService={authService}
+                           cardRepository={cardRepository}/>} />
             </Routes>
         </BrowserRouter>
       </div>

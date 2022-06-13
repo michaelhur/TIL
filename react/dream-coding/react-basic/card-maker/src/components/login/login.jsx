@@ -10,14 +10,17 @@ const Login = ({authService}) => {
     const goToMaker = (userId) => {
         navigate(
             '/maker', {
-                state: {id: userId}
+                state: {
+                    id: userId}
             }
         )
     }
 
     const onLogin = (event) => {
         authService.login(event.currentTarget.textContent)
-            .then(data => goToMaker(data.user.uid))
+            .then(data => {
+                goToMaker(data.user.uid)
+            })
     }
 
     useEffect(() => {

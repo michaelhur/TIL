@@ -38,7 +38,7 @@ const Maker = ({FileInput, authService, cardRepository}) => {
                 navigate('/')
             }
         })
-    }, [authService, userId, location])
+    }, [authService, userId, navigate])
 
     const addCard = (card) => {
         setCards(cards => {

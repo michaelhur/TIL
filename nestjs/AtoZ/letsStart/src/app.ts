@@ -1,10 +1,19 @@
 import * as express from "express";
 
 const app: express.Express = express();
-const port: number = 8000;
+const port: number = 3000;
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
+app.get('/test', (req: express.Request, res: express.Response) => {
+    res.send({
+        name: "허준혁",
+        age: 31,
+        friends: []})
+})
+
+app.post('/test', (req: express.Request, res: express.Response) => {
+    res.send({
+        person: "Mike"
+    })
 })
 
 app.listen(port, () => {

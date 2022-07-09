@@ -1,21 +1,16 @@
 import * as express from "express";
 
 const app: express.Express = express();
-const port: number = 3000;
 
-app.get('/test', (req: express.Request, res: express.Response) => {
-    res.send({
-        name: "허준혁",
-        age: 31,
-        friends: []})
-})
+const data = [1, 2, 3, 4];
 
-app.post('/test', (req: express.Request, res: express.Response) => {
+app.get('/', (req: express.Request, res:express.Response) => {
+    console.log(req);
     res.send({
-        person: "Mike"
+        data: data
     })
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+app.listen(8000, () => {
+    console.log('server is on...')
 })
